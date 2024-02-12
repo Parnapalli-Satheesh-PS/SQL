@@ -1,0 +1,13 @@
+Joins in SQL
+
+lnner Join - It will fetch only matching records from both tables.
+
+Left Join - Inner Join records  + Fetch any additional records from the left table which are not present In the right table. 
+
+Right Join - Inner Join records + Fetch any additional records from the right table which are not present in the left table
+
+Full Join - Inner Join records + Fetch any additional records from the left table which are not present in the right table +  Fetch any additional records from the Right table which are not present in the left table. 
+If there is no match, NULL values are returned for columns from the table without a match.
+
+Cross Join - It will combine one record from Table 1 to all the records from Table 2.
+Number of records in the Table 1 * Number of records in the Table2.
