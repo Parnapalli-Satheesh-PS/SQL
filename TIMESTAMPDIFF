@@ -1,0 +1,8 @@
+TIMESTAMPDIFF -Returns a value after subtracting a datetime expression from another.
+
+Unit should be one of the following: FRAC SECOND (microseconds), SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, YEAR.
+
+SELECT TIMESTAMPOIFF(unit, datetime_expression1, datetime_expression2) AS alias_column_name FROM table_name;
+
+Example:
+SELECT TIMESTAMPDIFF(MINUTE, start_dt,end_dt) AS duration_minutes FROM rides;
