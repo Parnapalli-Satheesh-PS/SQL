@@ -1,0 +1,12 @@
+UNION
+It will merge sets of multiple queries output.
+It will return unique values and duplicate values will be eiminated.
+
+UNION ALL
+It will merge sets of multiple queries output.
+It will return including duplicate values.
+
+Ex:
+select manager_id from employee
+uinon all
+select manager_id from managers
