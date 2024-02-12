@@ -1,1 +1,21 @@
-# SQL
+CASE - The CASE statement in SQL allows you to shape, transform, and manipulate data based on specified conditions.
+
+SELECT 
+CASE
+WHEN condition_1 THEN result_1
+WHEN condition_2 THEN result_2
+WHEN....THEN.... 
+ELSE result_3 -- If no condition matches, return the result in ELSE clause 
+END AS new column_name 
+FROM table name;
+
+Example:
+
+SELECT
+page,
+categoty,
+avg likes,
+CASE
+when avg likes >= 1000 THEN 'Super Likes'
+when avg likes BETWEEN 500 and 999 THEN 'Good Likes'
+when avg likes < 500 THEN "Low Likes' end as corresponding_likes_category FROM fb_pages;
