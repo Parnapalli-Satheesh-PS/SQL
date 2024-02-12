@@ -1,0 +1,4 @@
+select * from (
+select id_name, salary, dept_id,
+rank (over partition by dept_id order by salary desc) as rank from emp) e
+where rank=1;
