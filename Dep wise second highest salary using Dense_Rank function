@@ -1,0 +1,17 @@
+#SQLinterviewquestion
+
+Question: Find second highest salary from Employee table
+
+Answer:
+SELECT * FROM EMPLOYEE
+ORDER BY SALARY
+LIMIT 1 OFFSET 1;
+
+LIMIT function limits to mentioned number of records. 
+OFFSET function will remove mentioned records from the top.
+
+Question: Find department wise second highest salary from Employee table
+
+select * from
+(select emp, dense rank() over (partition by department_id order by salary desc) as dense_rank from employee) e
+where dense rank=2;
