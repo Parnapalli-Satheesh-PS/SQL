@@ -1,0 +1,20 @@
+We will use self join by joining emp_id and manager_id columns.
+
+select e.emp_id, e.emp_name, e.salary, e.manager_id
+from emp e
+join mgr m
+on e.emp_id = m.manager_id
+where e.salary > m.manager_salary;
+
+Table
+Input Columns
+emp_id
+emp name
+salary
+manager id
+
+Output columns
+emp id
+emp name
+salary
+manager id
