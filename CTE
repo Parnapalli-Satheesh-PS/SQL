@@ -1,0 +1,21 @@
+user id device_type view_date
+123 tablet 01/02/2022
+125 laptop 01/07/2022
+128 laptop 02/09/2022
+129 phone  02/09/2022
+145 tablet 02/24/2022
+
+Output
+laptop_views     mobile views
+2                3
+
+WITH
+CTE1 as (
+(select count(device_type) as laptop_views from viewership
+where device_type = 'laptop'),
+CTE2 as
+(select count(device_type) as mobile_views from viewership where device_type in ('tablet', 'phone')
+)
+SELECT laptop views, mobile_views FROM CTE1
+JOIN CTE2
+on 1=1;
