@@ -1,0 +1,5 @@
+CURRENT DATE: Returns the current date.
+CURRENT TIME: Returns the current time without the date.
+CURRENT TIMESTAMP or NOW(): Returns the current date and time. EXTRACT() and DATEPART() to extract specific components of date.
+DATE TRUNC() to round down date or timestamp into specific level of precision.
+INTERVAL to add or subtract time intervals in calculations.
