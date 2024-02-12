@@ -1,0 +1,5 @@
+How to find duplicates in a table?
+
+Table Name: Employee
+
+select emp id, count(*) from employee group by emp_id having count(*)>1;
