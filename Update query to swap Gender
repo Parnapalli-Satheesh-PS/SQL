@@ -1,0 +1,10 @@
+Update query to swap gender
+
+Table: Employees
+Column: employee_gender
+
+update employees set employee_gender= 
+case
+when employee_gender='Male' then 'Female' 
+when employee_gender='Female' then 'Male' 
+end
