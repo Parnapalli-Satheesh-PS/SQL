@@ -1,0 +1,71 @@
+#SQL interviewquestion
+
+For below two tables find the count of Inner Join, Left Join, Right Join, Full Join, and Cross Join.
+
+T1    T2
+1     1
+1     1
+2     1
+2     2
+4     3
+NULL  NULL
+
+Inner Join  = 8
+Left Join   = 10
+Right Join  = 10
+Full Join   = 12
+Cross Join  = 36
+
+Inner Join
+1,1
+1,1
+1,1
+1,1
+1,1
+1,1
+2,2
+2,2
+
+Left Join
+1,1
+1,1
+1,1
+1,1
+1,1
+1,1
+2,2
+2,2
+4, NULL
+NULL, NULL
+
+Right Join
+1,1
+1,1
+1,1
+1,1
+1,1
+1,1
+2,2
+2,2
+3, NULL
+NULL, NULL
+
+FULL JOIN 
+1,1
+1,1
+1,1
+1,1
+1,1
+1,1
+2,2
+2,2
+4,NULL
+NULL,NULL
+3,NULL
+NULL,NULL
+
+CROSS JOIN
+6*6 = 36
+
+
+
