@@ -1,0 +1,38 @@
+Rank - It will assign rank to each row, if multiple rows have same value then it will share same rank value, for next row rank will be skipped.
+
+Dense Rank - It will assign rank to each row, if multiple rows have same value then it will share same rank value, next row rank value cannot skipped.
+
+Row Number - It will assign unique row number to every row.
+
+#SQLinterviwquestion
+
+Question: Find Rank, Dense rank and Row Number for below employee table.
+
+ID NAME  SALARY  DEPT ID
+1 8000 1
+2 5000 5
+3 5000 3
+4 4000 1
+
+Answer:
+ID_NAME  SALARY  DEPT_ID  RANK  DENSE_RANK  ROW_NUMBER
+1        8000    1        1     1           1
+2        5000    5        2     2           2
+3        5000    3        2     2           3
+4        4000    1        4     3           4
+
+-> To get rank by salary in desc / asc order.
+
+select id name, salary, dept id
+rank() over(order by salary desc) as rank,
+dense rank() over(order by salary desc) as dense rank,
+row number() over(order by salary desc) as row_number
+from emp;
+
+-> To get rank by salary in desc / asc order and also to assign department wise rank value.
+
+select id name, salary, dept_id
+rank() over(partition by dept id order by salary desc) as rank,
+dense_rank() over(partition by dept_id order by salary desc) as dense rank,
+row number() over(partition by dept_id order by salary desc) as row_number
+from emp;
