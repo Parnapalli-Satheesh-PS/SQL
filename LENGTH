@@ -1,0 +1,9 @@
+LENGTH - Used to get length of the column
+Write query to get length of the below 
+
+Table : employee
+Column : name
+
+Write query ro find length of name 
+
+select name, length (name) as length_of_name from employee;
