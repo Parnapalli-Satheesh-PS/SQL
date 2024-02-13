@@ -1,0 +1,6 @@
+UPPER - To alter characters in UPPER case.
+LOWER - To alter characters in LOWER case.
+
+Write query to display name in upper case & city in lower case from Employee table
+
+select UPPER(name), LOWER(city) from employee;
