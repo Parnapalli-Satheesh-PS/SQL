@@ -1,0 +1,6 @@
+CONCAT - To merge two colums
+
+write SQL query to display first_name and last_name together.
+
+select concat ('first_name','last_name') as full_name
+from employee;
