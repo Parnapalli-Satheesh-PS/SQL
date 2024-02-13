@@ -1,0 +1,10 @@
+ROUND : It will rounds a number to a specified number of decimal places.
+
+we need to specify nunber of records we need to round of after number.
+
+Write query ro round of below number to 2 devimal places.
+
+SELECT ROUND(197.71743, 2);
+
+Output
+197.71
