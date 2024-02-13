@@ -1,0 +1,9 @@
+LTRIM - To remove left side space from the record.
+RTRIM - To remove right side soace from the record.
+
+select LTRIM('   parnapalli') as first_name, RTRIM('satheesh  ') as last_name from employee;
+
+
+output
+first_name   last_name
+parnapalli   satheesh
