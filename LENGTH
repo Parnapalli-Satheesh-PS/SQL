@@ -1,4 +1,4 @@
-LENGTH - Used to get length of the column
+LENGTH - Used to get length of the record.
 Write query to get length of the below 
 
 Table : employee
