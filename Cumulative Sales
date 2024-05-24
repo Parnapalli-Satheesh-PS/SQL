@@ -1,0 +1,21 @@
+Table : Sales
+
+input 
+date, product, quantity
+may1, A, 100
+may2, A, 80
+may3, A, 50
+may4, B, 100
+
+output
+date, product, quantity, total_sales
+may1, A, 100, 100
+may2, A, 80, 180
+may3, A, 50, 230
+may4, B, 100, 100
+
+Find cumulative sales of different products.
+
+select date, product, quantity, sum(quantity) as total_sales
+over(partition by product order by date) 
+from sales;
