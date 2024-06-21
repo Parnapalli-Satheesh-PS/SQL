@@ -1,0 +1,7 @@
+table - events
+columns - gold, silver, bronze
+
+select gold as player_name, count(1) as no_of_medals
+from events
+where gold not in (select silver from events union all select bronze from events)
+group by gold;
