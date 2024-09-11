@@ -1,5 +1,5 @@
 select * from (
 select dept_id, name, salary,
-rank (over partition by dept_id order by salary desc) as rank
+rank() (over partition by dept_id order by salary desc) as rank
 from emp) e
-where rank=1;
+where e.rank=1;
