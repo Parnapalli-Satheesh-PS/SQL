@@ -12,8 +12,11 @@ OFFSET function will remove mentioned records from the top.
 
 Question: Find department wise second highest salary from Employee table
 
-select * from
-(select emp, 
+select max(salary) as second_highest_salary from employee 
+where salary < (select max(salary) from employee);
+
+select salary from
+(select emp, salary
 dense rank() over (partition by department_id order by salary desc) as 'dense_rank'
 from employee) e
 where e.dense_rank=2;
