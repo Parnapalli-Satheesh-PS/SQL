@@ -1,0 +1,8 @@
+with cte as(
+select id, sum(sales) as sales
+from orders
+group_by id
+)
+select top 5 id, sales
+from cte
+order by sales desc;
