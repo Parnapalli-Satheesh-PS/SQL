@@ -1,0 +1,6 @@
+select * from
+(select *, row_number() over(partition_by id order by salary desc) as rn
+from employee) e
+where row_number<=3;
+
+this is top 3 salaries without any salary tie,  if salary ties with multiple same values use dense_rank().
