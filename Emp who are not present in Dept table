@@ -1,11 +1,6 @@
 Find employees who are not present in department table.
-
-
 Given two tables.
 Employee
 Department
-
-
-
 
 select * from employee where dept_id NOT IN (select dept_id from department);
