@@ -1,0 +1,4 @@
+with cte as(
+select * from row_number() over(partition by emp_id order by emp_id) as rn
+from emp)
+delete from cte where rn>1;
