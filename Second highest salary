@@ -1,2 +1,8 @@
 select max(salary) as second_highest_salary from employee
 where salary < (select max(salary) from employee);
+
+select * from
+(select id, name, salary, dense_rank() over(partition by id order by salary desc) as d_rn
+from employee) e
+where d_rn = 2;
+
