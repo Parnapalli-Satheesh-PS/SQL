@@ -1,0 +1,6 @@
+select customer_name, id, location, sum(sales) as total_sales,
+dense_rank() over(partition by id order by sum(sales) desc) as promotions
+from orders
+where location = 'newyork'
+and date between '2025-01-01' and current_date()
+group by customer_name, id, location
