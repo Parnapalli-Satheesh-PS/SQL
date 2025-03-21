@@ -1,4 +1,4 @@
-with cte as(
-select *, row_number() over(partition by emp_id order by emp_id) as rn
-from emp)
-delete from cte where rn>1;
+with CTE as(
+select *, row_number() over(partition by id order by id) as rn
+from employees)
+delete from employees where id in (select id from CTE where rn>1);
