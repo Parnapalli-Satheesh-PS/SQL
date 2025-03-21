@@ -1,4 +1,6 @@
 with CTE as(
-select name, id, salary, dept, row_number() over(partition by id order by id) as rn
-from employees)
+select name, id, salary, dept, 
+row_number() over(partition by id order by id) as rn
+from employees
+)
 delete from employees where id in (select id from CTE where rn>1);
