@@ -1,10 +1,11 @@
 We will use self join by joining emp_id and manager_id columns.
 
-select e.emp_id, e.emp_name, e.salary, e.manager_id
+select e.emp_id, e.salary, e.manager_id, m,salary
 from emp e
 join mgr m
 on e.manager_id = m.emp_id
-where e.salary > m._salary;
+where e.salary > m.salary;
+
 
 Table
 Input Columns
