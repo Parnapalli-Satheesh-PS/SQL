@@ -16,6 +16,6 @@ may4, B, 100, 100
 
 Find cumulative sales of different products.
 
-select date, product, quantity, sum(quantity) as total_sales
-over(partition by product order by date) 
+select date, product, quantity, 
+sum(quantity) over(partition by product order by date) as total_sales
 from sales;
