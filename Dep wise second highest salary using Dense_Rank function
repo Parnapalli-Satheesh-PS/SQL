@@ -16,7 +16,7 @@ select max(salary) as second_highest_salary from employee
 where salary < (select max(salary) from employee);
 
 select salary from
-(select emp, salary
-dense rank() over (partition by department_id order by salary desc) as 'dense_rank'
+(select emp, salary, department_id,
+dense rank() over (partition by department_id order by salary desc) as dense_rank
 from employee) e
 where e.dense_rank=2;
