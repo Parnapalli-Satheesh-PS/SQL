@@ -1,6 +1,6 @@
 We will use self join by joining emp_id and manager_id columns.
 
-select e.emp_id, e.salary, e.manager_id, m,salary
+select e.emp_id, e.salary, e.manager_id, m.salary
 from emp e
 join mgr m
 on e.manager_id = m.emp_id
