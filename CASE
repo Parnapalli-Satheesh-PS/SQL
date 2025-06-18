@@ -18,4 +18,6 @@ avg likes,
 CASE
 when avg likes >= 1000 THEN 'Super Likes'
 when avg likes BETWEEN 500 and 999 THEN 'Good Likes'
-when avg likes < 500 THEN "Low Likes' end as corresponding_likes_category FROM fb_pages;
+when avg likes < 500 THEN "Low Likes' 
+end as corresponding_likes_category 
+FROM fb_pages;
