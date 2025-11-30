@@ -3,8 +3,20 @@ Update query to swap gender
 Table: Employees
 Column: employee_gender
 
-update employees set employee_gender=
+update employees set gender=
 case
-when employee_gender='Male' then 'Female' 
-when employee_gender='Female' then 'Male' 
-end
+when gender='Male' then 'Female' 
+when gender='Female' then 'Male'
+else gender
+end;
+
+
+
+SELECT
+emp_id, name,
+    CASE
+        WHEN gender = 'M' THEN 'F'
+        WHEN gender = 'F' THEN 'M'
+        ELSE gender
+    END AS swapped_gender
+FROM employees;
