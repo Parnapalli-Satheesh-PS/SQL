@@ -1,8 +1,8 @@
 We will use self join by joining emp_id and manager_id columns.
 
-select e.emp_id, e.salary, e.manager_id, m.salary
+select e.emp_id as emp_id, e.salary as emp_salary, m.id as manager_id, m.salary as manager_salary
 from emp e
-join mgr m
+join emp m
 on e.manager_id = m.emp_id
 where e.salary > m.salary;
 
