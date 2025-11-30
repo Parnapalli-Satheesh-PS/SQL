@@ -6,3 +6,15 @@ group_by id
 select top 5 id, sales
 from cte
 order by sales desc;
+
+
+
+
+SELECT
+id,
+name,
+SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY id,name
+ORDER BY total_sales DESC
+LIMIT 5;
