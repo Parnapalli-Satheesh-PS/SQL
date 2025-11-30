@@ -1,8 +1,7 @@
 COALESCE() - To return NULL values as 0. It takes multiple inputs and intelligently returns the first non-null value.
 
 SELECT COALESCE(book_rating, 0) FROM goodreads;
-
-It will return 0 which book_rating column contains NULL values.
+If book_rating is NULL, return 0. If book_rating has a value (non-null), return that value.
 
 IFNULL - It will return NULL values as 0, but return first values as same whether it is null or not null values
 
@@ -15,9 +14,9 @@ NULL
 7
 
 with COALESCE funtion output will be
+0
 5
 7
-NULL
 
 with IFNULL funtion output will be
 NULL
