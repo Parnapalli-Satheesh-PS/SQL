@@ -4,3 +4,14 @@ row_number() over(partition by id order by salary desc) as rn
 from employees
 )
 delete from employees where id in (select id from CTE where rn>1);
+
+
+
+
+DELETE FROM employees
+WHERE id IN (
+    SELECT id
+    FROM employees
+    QUALIFY ROW_NUMBER() OVER (PARTITION BY name, dept ORDER BY salary DESC) > 1
+);
+
