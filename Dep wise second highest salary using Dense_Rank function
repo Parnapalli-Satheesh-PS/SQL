@@ -17,6 +17,13 @@ where salary < (select max(salary) from employee);
 
 select salary from
 (select emp, salary, department_id,
-dense rank() over (partition by department_id order by salary desc) as dense_rank
+dense_rank() over (partition by department_id order by salary desc) as dr
 from employee) e
-where e.dense_rank=2;
+where dr=2;
+
+---------QUALIFY can use after window functions in BQ
+SELECT
+id, department_id, salary,
+DENSE_RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS rn
+FROM employees
+QUALIFY rn = 2;
