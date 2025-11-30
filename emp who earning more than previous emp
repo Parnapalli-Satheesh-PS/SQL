@@ -5,3 +5,14 @@ case when e.salary > lag(salary) over(partition by dept_name order by emp_id) th
      when e.salary = lag(salary) over(partition by dept_name order by emp_id) then 'same sal than previous employee'
      end sal_range
 from employee e;
+
+
+
+WITH emp_with_prev AS (
+SELECT emp_id, name, salary,
+LAG(salary) OVER (ORDER BY emp_id) AS prev_salary
+FROM employees
+)
+SELECT *
+FROM emp_with_prev
+WHERE salary > prev_salary;
